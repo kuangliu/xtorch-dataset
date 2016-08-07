@@ -27,10 +27,27 @@ ds = ListDataset({
 })
 ```
 
-|-- trainData  
-|-- testData  
-|-- trainList  
-|-- testList  
-
 - `trainData`&`testData` are folders containing training/test images.  
 - `trainList`&`testList` are txt files containing the image names & labels/targets separated by spaces.
+
+## `classdataset`
+Loads training & test data from disk. But unlike `listdataset`, there is no index list,
+the images are organized in subfolders, the subfolder names are the class names.
+```lua
+dofile('classdataset.lua')
+ds = ClassDataset({
+    trainData = '/search/ssd/liukuang/cifar10/train/',
+    testData = '/search/ssd/liukuang/cifar10/test/',
+    imsize = 32
+})
+```
+
+**Directory Arrangement**  
+trainData  
+&nbsp; &nbsp; |\_ class 1  
+&nbsp; &nbsp; |\_ class 2  
+&nbsp; &nbsp; |\_ ...  
+testData  
+&nbsp; &nbsp; |\_ class 1  
+&nbsp; &nbsp; |\_ class 2  
+&nbsp; &nbsp; |\_ ...  
