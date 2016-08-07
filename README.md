@@ -1,5 +1,5 @@
 # xtorch-dataset
-xtorch dataset module, including `plaindataset`, `listdataset`, which provides a unified interface for training.  
+xtorch dataset module, including `plaindataset`, `listdataset`, `classdataset`, which provides a unified interface for training.  
 
 ## `plaindataset`
 Wraps `X_train`, `Y_train`, `X_test`, `Y_test`. Suitable for small dataset that can be loaded in memory at once.  
@@ -42,12 +42,23 @@ ds = ClassDataset({
 })
 ```
 
-**Directory Arrangement**  
-trainData  
-&nbsp; &nbsp; |\_ class 1  
-&nbsp; &nbsp; |\_ class 2  
-&nbsp; &nbsp; |\_ ...  
-testData  
-&nbsp; &nbsp; |\_ class 1  
-&nbsp; &nbsp; |\_ class 2  
-&nbsp; &nbsp; |\_ ...  
+**Directory Structure**  
+```
++-- trainData  
+|  +-- class 1
+|  |  +-- a.jpg
+|  |  ...
+|  +-- class 2
+|  |  +-- b.jpg
+|  |  ...
+|  ...
++-- testData  
+|  +-- class 1
+|  |  +-- c.jpg
+|  |  ...
+|  +-- class 2
+|  |  +-- d.jpg
+|  |  ...
+|  ...
+|
+```
